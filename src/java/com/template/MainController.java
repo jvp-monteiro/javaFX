@@ -16,7 +16,7 @@ public class MainController {
 
         bike.setMarca(txtMarca.getText());
         bike.setModelo(txtModelo.getText());
-        bike.setTipo(txtAno.getText()); // trocar para txtTipo futuramente
+        bike.setTipo(txtTipo.getText()); // trocar para txtTipo futuramente
         bike.setPreco(Double.parseDouble(txtPreco.getText()));
 
         BikeDAO dao = new BikeDAO();
@@ -44,7 +44,7 @@ public class MainController {
 
         txtMarca.clear();
         txtModelo.clear();
-        txtAno.clear();
+        txtTipo.clear();
         txtPreco.clear();
     }
     @FXML
@@ -57,7 +57,7 @@ public class MainController {
 
             bikeSelecionada.setMarca(txtMarca.getText());
             bikeSelecionada.setModelo(txtModelo.getText());
-            bikeSelecionada.setTipo(txtAno.getText());
+            bikeSelecionada.setTipo(txtTipo.getText());
             bikeSelecionada.setPreco(Double.parseDouble(txtPreco.getText()));
 
             BikeDAO dao = new BikeDAO();
@@ -76,6 +76,19 @@ public class MainController {
                 ).toString()
         );
     }
+    @FXML
+    private void btnCadastrarAction(ActionEvent event) {
+
+        BikeDTO objBikeDTO = new BikeDTO();
+
+        objBikeDTO.setMarca(txtMarca.getText());
+        objBikeDTO.setModelo(txtModelo.getText());
+
+        BikeDAO objBikeDAO = new BikeDAO();
+        objBikeDAO.cadastrarBike(objBikeDTO);
+
+        cadastrarBikes();
+    }
 
     @FXML
     private void selecionarBike() {
@@ -86,7 +99,7 @@ public class MainController {
 
             txtMarca.setText(bike.getMarca());
             txtModelo.setText(bike.getModelo());
-            txtAno.setText(bike.getTipo());
+            txtTipo.setText(bike.getTipo());
             txtPreco.setText(String.valueOf(bike.getPreco()));
         }
     }
@@ -97,7 +110,7 @@ public class MainController {
     private TextField txtModelo;
 
     @FXML
-    private TextField txtAno;
+    private TextField txtTipo;
 
     @FXML
     private TextField txtPreco;
@@ -114,29 +127,4 @@ public class MainController {
     @FXML
     private TableColumn<BikeDTO, String> colAno;
 
-
-    @FXML
-    private void btnSalvaAction() {
-
-        txtMarca.setText(txtMarca.getText());
-        txtModelo.setText(txtModelo.getText());
-        txtAno.setText(txtAno.getText());
-
-        double preco = Double.parseDouble(txtPreco.getText());
-    }
-
-
-    @FXML
-    private void btnCadastrarAction(ActionEvent event) {
-
-        BikeDTO objBikeDTO = new BikeDTO();
-
-        objBikeDTO.setMarca(txtMarca.getText());
-        objBikeDTO.setModelo(txtModelo.getText());
-
-        BikeDAO objBikeDAO = new BikeDAO();
-        objBikeDAO.cadastrarBike(objBikeDTO);
-
-        cadastrarBikes();
-    }
 }
