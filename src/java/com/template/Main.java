@@ -5,21 +5,20 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Main extends Application
-{
-    @Override
-    public void start(Stage stage) throws Exception
-    {
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("main.fxml"));
-        Scene scene = new Scene(loader.load(),600,400);
+public class Main extends Application {
 
-        stage.setTitle("Hello");
+    @Override
+    public void start(Stage stage) throws Exception {
+
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("main.fxml"));
+        Scene scene = new Scene(loader.load(), 600, 400);
+
+        stage.setTitle("Cadastro de Bikes");
         stage.setScene(scene);
         stage.show();
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         launch();
     }
 }

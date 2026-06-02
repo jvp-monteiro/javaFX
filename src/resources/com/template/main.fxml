@@ -9,24 +9,26 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
 <AnchorPane prefHeight="400.0" prefWidth="731.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.template.MainController">
    <children>
-      <Button layoutX="266.0" layoutY="187.0" mnemonicParsing="false" text="Button" />
-      <Button layoutX="266.0" layoutY="250.0" mnemonicParsing="false" text="Button" />
-      <Button layoutX="266.0" layoutY="307.0" mnemonicParsing="false" text="Button" />
+      <Button fx:id="btnMarcaEnviar" layoutX="266.0" layoutY="187.0" mnemonicParsing="false" text="Enviar" />
+      <Button fx:id="btnEnviarModelo" layoutX="266.0" layoutY="250.0" mnemonicParsing="false" text="Enviar" />
+      <Button fx:id="btnAnoEnviar" layoutX="266.0" layoutY="307.0" mnemonicParsing="false" text="Enviar" />
       <Label layoutX="36.0" layoutY="192.0" prefHeight="17.0" prefWidth="46.0" text="Marca:" textFill="WHITE" />
       <Label layoutX="37.0" layoutY="255.0" text="Modelo:" textFill="WHITE" />
       <TextField fx:id="txtMarca" layoutX="92.0" layoutY="187.0" />
       <TextField fx:id="txtAno" layoutX="92.0" layoutY="307.0" />
       <Label layoutX="56.0" layoutY="312.0" text="Ano:" textFill="WHITE" />
-      <TreeTableView fx:id="tblBike" layoutX="349.0" layoutY="159.0" prefHeight="181.0" prefWidth="302.0">
+      <TableView fx:id="tblBike" layoutX="349.0" layoutY="159.0" prefHeight="181.0" prefWidth="302.0">
         <columns>
-          <TreeTableColumn fx:id="colID" prefWidth="75.0" text="id" />
-          <TreeTableColumn fx:id="codMarca" prefWidth="75.0" text="marca" />
-            <TreeTableColumn fx:id="colModelo" prefWidth="75.0" text="modelo" />
-            <TreeTableColumn fx:id="ColAno" prefWidth="75.0" text="ano" />
+          <TableColumn fx:id="colID" prefWidth="75.0" text="id" />
+          <TableColumn fx:id="codMarca" prefWidth="75.0" text="marca" />
+            <TableColumn fx:id="colModelo" prefWidth="75.0" text="modelo" />
+            <TableColumn fx:id="ColAno" prefWidth="75.0" text="ano" />
         </columns>
-      </TreeTableView>
+      </TableView>
       <TextField fx:id="txttModelo" layoutX="92.0" layoutY="250.0" />
       <Text fill="WHITE" layoutX="292.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Specialized" textAlignment="CENTER" wrappingWidth="147.4853515625">
          <font>

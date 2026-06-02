@@ -1,18 +1,19 @@
 package com.template;
 
-
-import model.DTO.BicicletaDTO;
-import java.sql.*;
-import java.util.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BikeDAO {
 
-    // ===== CREATE =====
     public void cadastrarBike(BikeDTO bicicleta) {
 
         String sql = "INSERT INTO bicicleta (marca, modelo, tipo, preco) VALUES (?, ?, ?, ?)";
 
-        try (Connection conexao = new Conexao().conectar();
+        try (Connection conexao = new ConexaoBD().conectar();
              PreparedStatement comandoSQL = conexao.prepareStatement(sql)) {
 
             comandoSQL.setString(1, bicicleta.getMarca());
@@ -29,13 +30,13 @@ public class BikeDAO {
         }
     }
 
-    // ===== READ =====
-    public List<BikeDTO> listarBikes() {
+    public List<BikeDTO> listaBikes() {
 
         List<BikeDTO> listaBicicletas = new ArrayList<>();
+
         String sql = "SELECT * FROM bicicleta";
 
-        try (Connection conexao = new Conexao().conectar();
+        try (Connection conexao = new ConexaoBD().conectar();
              PreparedStatement comandoSQL = conexao.prepareStatement(sql);
              ResultSet resultadoConsulta = comandoSQL.executeQuery()) {
 
@@ -59,12 +60,11 @@ public class BikeDAO {
         return listaBicicletas;
     }
 
-    // ===== UPDATE =====
     public void alterarBike(BikeDTO bicicleta) {
 
         String sql = "UPDATE bicicleta SET marca=?, modelo=?, tipo=?, preco=? WHERE id=?";
 
-        try (Connection conexao = new Conexao().conectar();
+        try (Connection conexao = new ConexaoBD().conectar();
              PreparedStatement comandoSQL = conexao.prepareStatement(sql)) {
 
             comandoSQL.setString(1, bicicleta.getMarca());
@@ -82,12 +82,11 @@ public class BikeDAO {
         }
     }
 
-    // ===== DELETE =====
     public void excluirBike(int idBicicleta) {
 
         String sql = "DELETE FROM bicicleta WHERE id=?";
 
-        try (Connection conexao = new Conexao().conectar();
+        try (Connection conexao = new ConexaoBD().conectar();
              PreparedStatement comandoSQL = conexao.prepareStatement(sql)) {
 
             comandoSQL.setInt(1, idBicicleta);
