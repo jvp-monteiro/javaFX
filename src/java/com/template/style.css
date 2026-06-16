@@ -1,0 +1,155 @@
+/* ==================================================
+   ESTILO GERAL
+   ================================================== */
+
+.root {
+    -fx-background-color: #f6f8fa;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 13px;
+}
+
+/* ==================================================
+   LABELS
+   ================================================== */
+
+.label {
+    -fx-text-fill: #ffffff;
+}
+
+.titulo {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #24292f;
+}
+
+/* ==================================================
+   CAMPOS DE TEXTO
+   ================================================== */
+
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #d0d7de;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 8 10;
+    -fx-font-size: 13px;
+}
+
+.text-field:focused {
+    -fx-border-color: #0969da;
+    -fx-background-color: white;
+}
+
+/* ==================================================
+   BOTÕES
+   ================================================== */
+
+.button {
+    -fx-background-color: #f6f8fa;
+    -fx-border-color: #d0d7de;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-text-fill: #24292f;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 6 14;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #f3f4f6;
+}
+
+/* Botão principal */
+#btnCadastrar {
+    -fx-background-color: #2da44e;
+    -fx-text-fill: white;
+    -fx-border-color: #2da44e;
+}
+
+#btnCadastrar:hover {
+    -fx-background-color: #2c974b;
+}
+
+/* Botão Excluir */
+#btnExcluir {
+    -fx-background-color: #da3633;
+    -fx-text-fill: white;
+    -fx-border-color: #da3633;
+}
+
+#btnExcluir:hover {
+    -fx-background-color: #c72d2d;
+}
+
+/* ==================================================
+   TABELA
+   ================================================== */
+
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #d0d7de;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #f6f8fa;
+}
+
+.table-view .column-header {
+    -fx-background-color: #f6f8fa;
+    -fx-border-color: transparent transparent #d0d7de transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #57606a;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+}
+
+.table-row-cell:filled:hover {
+    -fx-background-color: #f3f4f6;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #dbeafe;
+}
+
+.table-cell {
+    -fx-padding: 8;
+}
+
+/* ==================================================
+   SCROLLBAR
+   ================================================== */
+
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #d0d7de;
+    -fx-background-radius: 10;
+}
+
+/* ==================================================
+   ALERTAS
+   ================================================== */
+
+.dialog-pane {
+    -fx-background-color: white;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: white;
+}
+
+.dialog-pane .content.label {
+    -fx-text-fill: #24292f;
+}

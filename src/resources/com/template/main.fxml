@@ -5,32 +5,39 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="836.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.template.MainController">
+<AnchorPane prefHeight="414.0" prefWidth="913.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.template.MainController">
    <children>
-      <Button fx:id="btnDeletarAction" layoutX="266.0" layoutY="187.0" mnemonicParsing="false" onAction="#btnDeletarAction" text="Deletar" />
-      <Button fx:id="btnLimparAction" layoutX="266.0" layoutY="238.0" mnemonicParsing="false" onAction="#btnLimparAction" text="Limpar" />
-      <Label layoutX="33.0" layoutY="138.0" prefHeight="17.0" prefWidth="46.0" text="Marca:" textFill="WHITE" />
+      <ImageView fitHeight="414.0" fitWidth="941.0">
+         <image>
+            <Image url="@/imagens/fundo.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnAlterar" layoutX="756.0" layoutY="180.0" mnemonicParsing="false" onAction="#btnAlterarAction" prefHeight="26.0" prefWidth="79.0" text="Alterar" />
+      <Button fx:id="btnLimpar" layoutX="757.0" layoutY="230.0" mnemonicParsing="false" onAction="#btnLimparAction" prefHeight="26.0" prefWidth="79.0" text="Limpar" />
+      <Label layoutX="37.0" layoutY="138.0" prefHeight="17.0" prefWidth="46.0" text="Marca:" textFill="WHITE" />
       <Label layoutX="34.0" layoutY="193.0" text="Modelo:" textFill="WHITE" />
       <TextField fx:id="txtMarca" layoutX="92.0" layoutY="133.0" />
       <TextField fx:id="txtModelo" layoutX="92.0" layoutY="188.0" />
       <TextField fx:id="txtPreco" layoutX="92.0" layoutY="288.0" />
       <TextField fx:id="txtTipo" layoutX="92.0" layoutY="239.0" />
-      <Text fill="WHITE" layoutX="282.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Specialized" textAlignment="CENTER" wrappingWidth="147.4853515625">
+      <Text fill="WHITE" layoutX="383.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Specialized" textAlignment="CENTER" wrappingWidth="147.4853515625">
          <font>
             <Font name="Diwan Kufi Regular" size="18.0" />
          </font>
       </Text>
-      <Button fx:id="btnEnviarAction" layoutX="266.0" layoutY="133.0" mnemonicParsing="false" onAction="#btnEnviarAction" prefHeight="26.0" prefWidth="57.0" text="Enviar" />
-      <Label layoutX="46.0" layoutY="243.0" text="tipo" textFill="WHITE" />
-      <Label layoutX="40.0" layoutY="293.0" text="preco" textFill="WHITE" />
-      <Button fx:id="btnSalvarAction" layoutX="266.0" layoutY="288.0" mnemonicParsing="false" onAction="#btnLimparAction" prefHeight="26.0" prefWidth="57.0" text="Salvar" />
-      <TableView fx:id="tblBike" layoutX="347.0" layoutY="133.0" prefHeight="184.0" prefWidth="453.0">
+      <Button fx:id="btnCadastrar" layoutX="756.0" layoutY="132.0" mnemonicParsing="false" onAction="#btnCadastrarAction" prefHeight="26.0" prefWidth="79.0" text="Cadastrar" />
+      <Label layoutX="46.0" layoutY="243.0" text="Tipo:" textFill="WHITE" />
+      <Label layoutX="42.0" layoutY="293.0" text="Preco:" textFill="WHITE" />
+      <Button fx:id="btnExcluir" layoutX="757.0" layoutY="280.0" mnemonicParsing="false" onAction="#btnExcluirAction" prefHeight="26.0" prefWidth="79.0" text="Excluir" />
+      <TableView fx:id="tblBike" layoutX="272.0" layoutY="132.0" prefHeight="194.0" prefWidth="453.0">
         <columns>
-          <TableColumn fx:id="colid" prefWidth="75.0" text="id" />
+          <TableColumn fx:id="colId" prefWidth="75.0" text="id" />
           <TableColumn fx:id="colMarca" prefWidth="75.0" text="marca" />
             <TableColumn fx:id="colModelo" prefWidth="75.0" text="modelo" />
             <TableColumn fx:id="colAno" prefWidth="75.0" text="ano" />
