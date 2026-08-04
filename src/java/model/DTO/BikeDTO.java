@@ -1,4 +1,4 @@
-package com.template;
+package model.DTO;
 
 public class BikeDTO {
 

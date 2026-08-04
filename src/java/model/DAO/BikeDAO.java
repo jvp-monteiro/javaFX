@@ -1,6 +1,9 @@
-package com.template;
+package model.DAO;
 
 // Importações necessárias para conexão com banco de dados
+import model.ConexaoBD;
+import model.DTO.BikeDTO;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,12 +12,14 @@ import java.sql.SQLException;
 // Importações para trabalhar com listas
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class BikeDAO {
+    private static final Logger logger = Logger.getLogger (BikeDAO.class.getName());
 
-    // Método responsável por cadastrar uma bicicleta no banco
+    // Método responsável por cadastrar uma bicicleta no banco.
     public void cadastrarBike(BikeDTO bicicleta) {
-
         // Comando SQL de inserção
         String sql = "INSERT INTO bicicleta (marca, modelo, tipo, preco) VALUES (?, ?, ?, ?)";
 
@@ -32,10 +37,14 @@ public class BikeDAO {
 
             System.out.println("Sucesso: Bike cadastrada!");
 
-        } catch (SQLException erro) {
-            // Exibe erro caso aconteça alguma falha
-            erro.printStackTrace();
+
+        } catch (SQLException e) {
+            logger.log (Level. SEVERE, "Erro ao listar usuário", e);
+            showError("Erro ao ao listar usuário.");
         }
+    }
+
+    private void showError(String s) {
     }
 
     // Método responsável por listar todas as bicicletas cadastradas
