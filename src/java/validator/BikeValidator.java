@@ -1,48 +1,31 @@
-
 package validator;
-
-import static util.Alert.mostrarErro;
 
 public class BikeValidator {
 
-    public boolean validarCampos(String marca,
-                                 String modelo,
-                                 String tipo,
-                                 String preco) {
+    public static void validarCampos(String marca, String modelo, String tipo, String preco) throws IllegalArgumentException {
+        if (marca == null || marca.trim().isEmpty() ||
+                modelo == null || modelo.trim().isEmpty() ||
+                tipo == null || tipo.trim().isEmpty() ||
+                preco == null || preco.trim().isEmpty()) {
 
-        if (marca == null || marca.trim().isEmpty()) {
-            mostrarErro("Informe a marca.");
-            return false;
-        }
-
-        if (modelo == null || modelo.trim().isEmpty()) {
-            mostrarErro("Informe o modelo.");
-            return false;
-        }
-
-        if (tipo == null || tipo.trim().isEmpty()) {
-            mostrarErro("Informe o tipo.");
-            return false;
-        }
-
-        if (preco == null || preco.trim().isEmpty()) {
-            mostrarErro("Informe o preço.");
-            return false;
+            throw new IllegalArgumentException("Preencha todos os campos.");
         }
 
         try {
-            double valor = Double.parseDouble(preco.replace(",", "."));
-
-            if (valor <= 0) {
-                mostrarErro("O preço deve ser maior que zero.");
-                return false;
-            }
-
+            Double.parseDouble(preco);
         } catch (NumberFormatException e) {
-            mostrarErro("Preço inválido.");
-            return false;
+            throw new IllegalArgumentException("O preço deve ser um número válido.");
         }
+        public class Validador {
 
-        return true;
+            public static boolean validarPreco(String preco) {
+                try {
+                    Double.parseDouble(preco);
+                    return true;
+                } catch (NumberFormatException e) {
+                    return false;
+                }
+            }
+        }
     }
 }

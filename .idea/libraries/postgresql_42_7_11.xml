@@ -1,9 +1,14 @@
 <component name="libraryTable">
   <library name="postgresql-42.7.11">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Downloads/postgresql-42.7.11.jar!/" />
+      <root url="file://$USER_HOME$/javafx-sdk-26.0.2/lib" />
+      <root url="jar://$USER_HOME$/Downloads/postgresql-42.7.12.jar!/" />
     </CLASSES>
     <JAVADOC />
+    <NATIVE>
+      <root url="file://$USER_HOME$/javafx-sdk-26.0.2/lib" />
+    </NATIVE>
     <SOURCES />
+    <jarDirectory url="file://$USER_HOME$/javafx-sdk-26.0.2/lib" recursive="false" />
   </library>
 </component>

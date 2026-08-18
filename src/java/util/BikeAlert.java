@@ -2,7 +2,7 @@ package util;
 
 import javafx.scene.control.ButtonType;
 
-public class Alert {
+public class BikeAlert {
 
     public static void mostrarSucesso(String mensagem) {
 
